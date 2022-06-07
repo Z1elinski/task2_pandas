@@ -1,0 +1,55 @@
+# Recruitment task nr 1
+
+# About the dataset:
+  Csv file contains more than 11k books ratings along with some additional info. 
+ Column names:
+BóókID - A unique Identification number for each book.
+TITLę - The name under which the book was published.
+ąuTHors - Names of the authors of the book. Multiple authors are delimited with -.
+ĄVERAGĘ_rąting - The average rating of the book received in total.
+isbń - Another unique number to identify the book, the International Standard Book Number.
+ISBń13 - A 13-digit ISBN to identify the book, instead of the standard 11-digit ISBN. 
+Ląnguage_code - Helps understand what is the primary language of the book. For instance, eng is standard for English.
+num_pages - Number of pages the book contains.
+ratings_count - Total number of ratings the book received.
+text_reviews_count - Total number of written text reviews the book received.
+publication_date
+publisher
+
+# Create a python script that:
+
+# 1) Unzips the books_data.7z file. Password is stored in pass.txt file.
+
+# 2) Reads the extracted csv file (note that you dont know the name of the file inside, just the extension of it) and does the following transformations:
+
+# 3) Normalization:
+- lowercase every column and change polish characters to their non-unicode characters (ex. "ó" -> "o"), column names were renamed on purpose to have polish characters
+
+# 4) Save the normalized df to parquet format under "./data/transformed/" folder
+
+####### SECOND  PART #########
+
+# 5) Saving books df to an excel file.
+
+	Lets do some querying on the data frame and save it to different excel sheets (multiple sheets but only one excel file under "./data/trasnformed/")
+	Excel file should have 5 sheets (5 separate tasks to complete) with df saved to them in such form:
+	# sheet name - task name
+
+# 5a) TASK NAME - "Top 50 books"
+# first task is to get top 200 books that were rated the most often (ratings_count column) and then sort them by average_rating column and limit the results to only 50 of them
+
+# 5b) TASK NAME - "Best books before 2000s"
+# second task is to sort the df for the books published before year 2000 and sort them by average_rating column. Get rid of isbn13 column.
+
+# 5c) TASK NAME - "University Published"
+# save the df with publisher being any University (so publisher column should contain University or Academic in the name), sort by average rating, get rid of isbn13 column.
+
+# 5d) TASK NAME - "Best short stories"
+    Sort the df for books that have:
+    - less than 100 pages
+    - more than 1000 ratings
+    - sort by average ratings
+    - take top 50 results
+
+ # 5e) TASK NAME - "Most popular author"
+ -  find the author with the most ratings in total, take all of his/her titles to the df and sort by average_rating
